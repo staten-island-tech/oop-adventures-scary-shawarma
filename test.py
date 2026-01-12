@@ -9,11 +9,13 @@ class hero():
     global attack
     global stamina
     global hp
+    global money
     stamina=100
     hp=100
     attack=25
 # justin = MC(100,100,100,100,100,100,3,1
     name=input("Give me a name plz")
+    input(f"Here are you stats:{name},{stamina},{money}")
     def potion(self,strength,health,stamina):
         self.strength=strength
         self.health=health
