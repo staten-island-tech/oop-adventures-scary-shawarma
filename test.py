@@ -1,5 +1,5 @@
 class hero():
-    def mc(self,name,stamina,hp,attack,level,money):
+    def mc(self,name,stamina,hp,attack,money):
         self.name=name
         self.stamina=stamina
         self.hp=hp
@@ -22,10 +22,9 @@ class hero():
         self.stamina=stamina
         strength=attack*1.5
         stamina=1.5*stamina
-    def health(self,regeneration,point):
-        self.regeneration=regeneration
-        self.point=point
-        point=3
+    def health(hp,regeneration):
+        hp.regeneration=regeneration
+        hp.point=point
         regeneration=1
     global point
     global regeneration
