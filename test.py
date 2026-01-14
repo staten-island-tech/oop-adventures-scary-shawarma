@@ -15,7 +15,11 @@ class hero():
     money=100
 # justin = MC(100,100,100,100,100,100,3,1
     name=input("Give me a name plz")
-    input(f"Here are you stats:\name:{name}\stamina:{stamina}\money:{money}\attack:{attack}\hp:{hp}")
+    print("here your stats:")
+    print(f"hp:{hp}")
+    print(f"stamina:{stamina}")
+    print(f"attack:{attack}")
+    print(f"money:{money}")
     def potion(self,strength,health,stamina):
         self.strength=strength
         self.health=health
