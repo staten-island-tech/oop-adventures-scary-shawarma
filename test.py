@@ -5,7 +5,6 @@ class hero():
         self.hp=hp
         self.attack=attack
         self.money = money
-        money=100
     global attack
     global stamina
     global hp
@@ -13,9 +12,10 @@ class hero():
     stamina=100
     hp=100
     attack=25
+    money=100
 # justin = MC(100,100,100,100,100,100,3,1
     name=input("Give me a name plz")
-    input(f"Here are you stats:{name},{stamina},{money}")
+    input(f"Here are you stats:\name:{name}\stamina:{stamina}\money:{money}\attack:{attack}\hp:{hp}")
     def potion(self,strength,health,stamina):
         self.strength=strength
         self.health=health
