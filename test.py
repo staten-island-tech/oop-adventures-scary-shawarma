@@ -4,6 +4,7 @@
 # window.geometry("700x600")
 # question_label = tk.Label(window, text="", wraplength=550, font=("Sans serif", 14))
 # question_label.pack(pady=20)
+# buttons = []
 # window.title("This is crackheads shop")
 # title = tk.Label(window, text="Welcome to crackheads shop", font=("Arial",16))
 # for i in range(8):
