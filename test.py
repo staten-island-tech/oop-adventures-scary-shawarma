@@ -50,6 +50,3 @@ class hero():
         self.hp=max(0,min(100,self.hp))
         self.money =max(0,min(100,self.money))
         self.attack=max(0,min(100,self.attack))
-    while enemy.hp > 0:
-        self.attack(enemy)
-        self.regeneration()
