@@ -140,7 +140,6 @@ class Boss:
 def fight_boss(player: Player, boss: Boss):
     print(f"\nYou are fighting: {boss.name}")
     while boss.is_alive() and player.hp > 0:
-        action = input("Do you want to [A]ttack or [H]eal? ").lower()
         action = input("Do you want to atk or heal?").lower()
         if action == "atk":
             damage = random.randint(player.attack - 3, player.attack + 3)
