@@ -96,7 +96,7 @@
 #         return
 
 #     change_text(
-#         f"{prefix}\n\n"
+
 #         f"{current_boss.name} HP: {current_boss.hp}\n"
 #         f"Your HP: {hero.hp}"
 #     )
@@ -116,46 +116,40 @@
 # window.mainloop()
 
 
-
-
-
-
 import random
 class Player:
     def __init__(self, name):
         self.name = name
         self.hp = 100
         self.attack = 10
-        self.gold = 50
-        self.has_sword = False
-
+        self.money = 50
     def show_stats(self):
-        print(f"\n{self.name}'s Stats: HP: {self.hp}, Attack: {self.attack}, Gold: {self.gold}")
-
+        print(f"\n{self.name}'s Stats: HP: {self.hp}, Attack: {self.attack}, Money: {self.money}")
 class Merchant:
     def __init__(self):
         self.sword_price = 30
         self.sword_attack = 15
 class Boss:
     def __init__(self):
-        self.name = "Dark Overlord"
+        self.name = "Big red roofus the bagoofus"
         self.hp = 120
         self.attack = 12
 
     def is_alive(self):
         return self.hp > 0
 def fight_boss(player: Player, boss: Boss):
-    print(f"\nYou encounter the {boss.name}!")
+    print(f"\nYou are fighting: {boss.name}")
     while boss.is_alive() and player.hp > 0:
         action = input("Do you want to [A]ttack or [H]eal? ").lower()
-        if action == "a":
+        action = input("Do you want to atk or heal?").lower()
+        if action == "atk":
             damage = random.randint(player.attack - 3, player.attack + 3)
             boss.hp -= damage
-            print(f"You attack the {boss.name} for {damage} damage! Boss HP: {max(boss.hp, 0)}")
-        elif action == "h":
+            print(f"You attack the{boss.name} and did this much damage:{damage}  Boss HP: {max(boss.hp, 0)}")
+        elif action == "heal":
             heal = random.randint(10, 20)
             player.hp += heal
-            print(f"You heal yourself for {heal} HP! Your HP: {player.hp}")
+            print(f"You heal yourself by {heal} HP \nYour HP: {player.hp}")
         else:
             print("Invalid action!")
 
@@ -163,26 +157,22 @@ def fight_boss(player: Player, boss: Boss):
             boss_damage = random.randint(boss.attack - 2, boss.attack + 2)
             player.hp -= boss_damage
             print(f"The {boss.name} attacks you for {boss_damage} damage! Your HP: {max(player.hp, 0)}")
-
     if player.hp > 0:
-        print(f"\nCongratulations! You defeated the {boss.name}!")
+        print(f"\nCongratulations! You defeated the {boss.name}")
     else:
-        print("\nYou were defeated... Game Over.")
+        print("\nYou were defeated\nGame Over!!!!")
 def main():
     print("Welcome to the Adventure Game!")
     player_name = input("Enter your name: ")
     player = Player(player_name)
     merchant = Merchant()
     boss = Boss()
-
     while True:
         print("\n--- Main Menu ---")
         print("1. Visit Merchant")
         print("2. Fight Boss")
         print("3. Show Stats")
-        print("4. Exit Game")
         choice = input("Choose an action: ")
-
         if choice == "1":
             merchant.sell_sword(player)
         elif choice == "2":
@@ -190,8 +180,5 @@ def main():
             break
         elif choice == "3":
             player.show_stats()
-        elif choice == "4":
-            print("Thanks for playing!")
-            break
         else:
             print("Invalid choice!")
