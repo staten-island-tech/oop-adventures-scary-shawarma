@@ -45,3 +45,11 @@ class hero():
     def regen(self):
         if self.hp < self.max_hp:
             self.hp+=self.regeneration
+    def statcap(self):
+        self.stamina=max(0,min(100,self.stamina))
+        self.hp=max(0,min(100,self.hp))
+        self.money =max(0,min(100,self.money))
+        self.attack=max(0,min(100,self.attack))
+    while enemy.hp > 0:
+        self.attack(enemy)
+        self.regeneration()
